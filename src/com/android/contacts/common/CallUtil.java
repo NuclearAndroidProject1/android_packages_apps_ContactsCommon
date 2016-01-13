@@ -154,7 +154,6 @@ public class CallUtil {
         return context.getResources().getInteger(
                 R.integer.config_enable_video_calling);
     }
-
     /**
      * Determines if one of the call capable phone accounts defined supports calling with a subject
      * specified.
