@@ -62,21 +62,6 @@ public class CallUtil {
      * Return an Intent for making a phone call. Scheme (e.g. tel, sip) will be determined
      * automatically.
      */
-    public static Intent getCallWithSubjectIntent(String number,
-            PhoneAccountHandle phoneAccountHandle, String callSubject) {
-
-        final Intent intent = getCallIntent(getCallUri(number));
-        intent.putExtra(TelecomManager.EXTRA_CALL_SUBJECT, callSubject);
-        if (phoneAccountHandle != null) {
-            intent.putExtra(TelecomManager.EXTRA_PHONE_ACCOUNT_HANDLE, phoneAccountHandle);
-        }
-        return intent;
-    }
-
-    /**
-     * Return an Intent for making a phone call. Scheme (e.g. tel, sip) will be determined
-     * automatically.
-     */
     public static Intent getCallIntent(String number) {
         return getCallIntent(getCallUri(number));
     }
@@ -154,6 +139,7 @@ public class CallUtil {
         return context.getResources().getInteger(
                 R.integer.config_enable_video_calling);
     }
+
     /**
      * Determines if one of the call capable phone accounts defined supports calling with a subject
      * specified.
